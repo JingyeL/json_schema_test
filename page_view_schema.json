@@ -1,0 +1,117 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/pageview.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "event_type",
+        "event_id",
+        "user_id",
+        "user_ip",
+        "user_agent",
+        "referrer",
+        "url",
+        "page_title",
+        "page_view_time",
+        "custom_data"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "event_type": {
+            "type": "string"
+        },
+        "event_id": {
+            "type": "string"
+        },
+        "user_id": {
+            "type": "integer"
+        },
+        "user_ip": {
+            "type": "string"
+        },
+        "user_agent": {
+            "type": "string"
+        },
+        "referrer": {
+            "type": "string"
+        },
+        "url": {
+            "type": "string"
+        },
+        "price": {
+            "type": "number"
+        },
+        "page_title": {
+            "type": "string"
+        },
+        "page_view_time": {
+            "type": "string"
+        },
+        "custom_data": {
+            "type": "object",
+            "required": [
+                "user_type",
+                "user_group",
+                "user_age",
+                "user_payload"
+            ],
+            "properties": {
+                "user_type": {
+                    "type": "string"
+                },
+                "user_group": {
+                    "type": "string"
+                },
+                "user_age": {
+                    "type": "integer"
+                },
+                "user_payload": {
+                    "type": "object",
+                    "required": [
+                        "user_name",
+                        "user_email"
+                    ],
+                    "properties": {
+                        "user_name": {
+                            "type": "string"
+                        },
+                        "user_email": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "examples": [{
+                "user_type": "paid",
+                "user_group": "beta",
+                "user_age": 23,
+                "user_payload": {
+                    "user_name": "john",
+                    "user_email": "john@email.com"
+                }
+            }]
+        }
+    },
+    "examples": [{
+        "event_type": "pageview",
+        "event_id": "12345",
+        "user_id": 123,
+        "user_ip": "101.188.68.135",
+        "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)",
+        "referrer": "http://www.google.com",
+        "url": "http://www.google.com",
+        "price": 123.45,
+        "page_title": "Google",
+        "page_view_time": "2023-09-24 09:00:00",
+        "custom_data": {
+            "user_type": "paid",
+            "user_group": "beta",
+            "user_age": 23,
+            "user_payload": {
+                "user_name": "john",
+                "user_email": "john@email.com"
+            }
+        }
+    }]
+}
