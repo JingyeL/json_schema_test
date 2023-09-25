@@ -1,3 +1,6 @@
-## 1. generate schema from unit test
-## 2. download production schema
-## 3. compare schema with production schema
+## 1. generate schema use json schema generator
+## 2. (optionally) handle datatime check
+## 3. upload schema to s3 - `s3://data-platform-schema/`
+
+## 4. unit test/CI: download production schema
+## 5. compare local schema with production schema
